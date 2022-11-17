@@ -1,8 +1,10 @@
 import { 
     Card, CardHeader, CardBody, CardFooter, 
-    Text, Heading, Button, Image, Stack, Divider, ButtonGroup
+    Text, Heading, Button, Image, Stack, Divider, ButtonGroup, LinkOverlay
 } from '@chakra-ui/react';
 import {Project} from "../classes/Project"
+
+
 
 export const ProjectCard = (project: Project) => (
     <Card>
@@ -11,23 +13,31 @@ export const ProjectCard = (project: Project) => (
         alt='Project Image'
         borderRadius='lg'
         />
-    <Stack mt='6' spacing='3'>
-        <CardHeader>
-            <Heading size='md'>{project.title}</Heading>
-        </CardHeader>
+        {/* <CardHeader>
+        </CardHeader> */}
         <CardBody>
-            <Text>{project.tagline}</Text>
+            <Stack mt='6' spacing='3'>
+            <Heading size='md'>{project.title}</Heading>
+                    <Text>{project.award}, {project.year}</Text>
+                    <Text>{project.tagline}</Text>
+            </Stack>
         </CardBody>
-    </Stack>
   <Divider />
         <CardFooter>
         <ButtonGroup spacing='2'>
+            
+          <LinkOverlay href={project.github} target="_blank" rel="noopener noreferrer">
             <Button variant='solid' colorScheme='blue'>
                 View on GitHub
             </Button>
-            <Button variant='ghost' colorScheme='blue'>
-                Share
-            </Button>
+          </LinkOverlay>
+            {
+                project.hasDemo ? 
+                <LinkOverlay href={project.demo} target="_blank" rel="noopener noreferrer">
+                    <Button variant='ghost' colorScheme='blue'>Demo</Button> 
+                </LinkOverlay>
+                : null   
+            }
             </ButtonGroup>
         </CardFooter>
     </Card>
