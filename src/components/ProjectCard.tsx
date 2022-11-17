@@ -1,5 +1,5 @@
 import { 
-    Card, CardHeader, CardBody, CardFooter, 
+    Card, CardBody, CardFooter, 
     Text, Heading, Button, Image, Stack, Divider, ButtonGroup, LinkOverlay
 } from '@chakra-ui/react';
 import {Project} from "../classes/Project"
