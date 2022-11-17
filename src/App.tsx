@@ -1,11 +1,11 @@
 import * as React from "react"
 import {
   ChakraProvider,
-  Box,
+  Box, Button,
   VStack,
-  Grid,
+  Grid, LinkOverlay,
   theme,
-  SimpleGrid, Text, Heading, Spacer
+  SimpleGrid, Heading, ButtonGroup
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { ProjectCard } from "./components/ProjectCard"
@@ -47,13 +47,27 @@ export const App = () => (
   <ChakraProvider theme={theme}>
     <Box id="header" textAlign="center" fontSize="xl">
       <VStack mt='100px' spacing='50px'>
+        <ButtonGroup>
+          <LinkOverlay href="#header" target="_blank" rel="noopener noreferrer">
+            <Button variant='ghost' colorScheme='blue'>HOME</Button> 
+          </LinkOverlay>
+          <LinkOverlay href="#project_head" target="_blank" rel="noopener noreferrer">
+            <Button variant='ghost' colorScheme='blue'>ABOUT</Button> 
+          </LinkOverlay>
+          <LinkOverlay href="#project_head" target="_blank" rel="noopener noreferrer">
+            <Button variant='ghost' colorScheme='blue'>PROJECT GALLERY</Button> 
+          </LinkOverlay>
+          <LinkOverlay href="#project_head" target="_blank" rel="noopener noreferrer">
+            <Button variant='ghost' colorScheme='blue'>CONTACT US</Button> 
+          </LinkOverlay>
+        </ButtonGroup>
         <Heading fontSize="5xl">Hello World!</Heading>
         <Heading fontSize="5xl">Welcome to NUSH Hack 2023!</Heading>
       </VStack>
       
     </Box>
     <Box textAlign="center" fontSize="xl" mt="100px">
-      <Heading fontSize="4xl">Previous Project Gallery</Heading>
+      <Heading fontSize="4xl" id="project_head">Previous Project Gallery</Heading>
       <Grid minH="100vh" p={3}>
         <ColorModeSwitcher justifySelf="flex-end" />
         <VStack spacing={8}>
