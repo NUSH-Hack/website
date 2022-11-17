@@ -8,9 +8,24 @@ import {
   Code,
   Grid,
   theme,
+  SimpleGrid
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Logo } from "./Logo"
+import { ProjectCard } from "./components/ProjectCard"
+import { Project } from './classes/Project'
+import logo from "./logo.svg"
+
+const projects = [
+  new Project(
+    "Clash of Forest", "A gamified, machine-vision powered time-management software for PC",
+    "1st Place", true, 2022, logo
+  ),
+  new Project(
+    "Rhyolite", "A powerful tab management browser extension for the power users among us",
+    "2nd Place", true, 2022, ""
+  ),
+]
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -31,6 +46,11 @@ export const App = () => (
           >
             Learn Chakra
           </Link>
+          <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
+            {projects.map(ProjectCard)}
+            <ProjectCard title={"Rhyolite"} tagline={"A powerful tab management browser extension for the power users among us"} award={"2nd Place"} isAward={true} year={2022} image={""}></ProjectCard>
+          </SimpleGrid>
+          
         </VStack>
       </Grid>
     </Box>
