@@ -5,7 +5,7 @@ import {
   VStack,
   Grid,
   theme,
-  SimpleGrid
+  SimpleGrid, Text, Heading, Spacer
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { ProjectCard } from "./components/ProjectCard"
@@ -45,7 +45,15 @@ const projects = [
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
+    <Box id="header" textAlign="center" fontSize="xl">
+      <VStack mt='100px' spacing='50px'>
+        <Heading fontSize="5xl">Hello World!</Heading>
+        <Heading fontSize="5xl">Welcome to NUSH Hack 2023!</Heading>
+      </VStack>
+      
+    </Box>
+    <Box textAlign="center" fontSize="xl" mt="100px">
+      <Heading fontSize="4xl">Previous Project Gallery</Heading>
       <Grid minH="100vh" p={3}>
         <ColorModeSwitcher justifySelf="flex-end" />
         <VStack spacing={8}>
