@@ -3,16 +3,18 @@ import {
   ChakraProvider,
   Box, Button,
   VStack,
-  theme,
   Heading, ButtonGroup
 } from "@chakra-ui/react"
 
 import { ProjectGallery } from "./views/ProjectGallery"
+import Fonts from "./Fonts"
+import theme from "./theme/theme"
 
 export const App = () => {
 
   return (
   <ChakraProvider theme={theme}>
+    <Fonts />
     <Box id="header" textAlign="center" fontSize="xl">
       <VStack mt='100px' spacing='50px'>
         <ButtonGroup fontSize="3xl">

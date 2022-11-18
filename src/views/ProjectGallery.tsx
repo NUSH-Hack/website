@@ -11,6 +11,7 @@ import rhyolite from "../images/rhyolite.png"
 import clash_of_forest from "../images/clash_of_forest.png"
 import hermes from "../images/hermes.png"
 import grocersChoice from "../images/grocersChoice.png"
+import coeus from "../images/coeus.jpg"
 
 const projects = [
   new Project(
@@ -26,7 +27,7 @@ const projects = [
   new Project(
     "Hermes", "A Progressive App for Item Sharing",
     "Represented at Intl' NUSH Hack", 2021, hermes,
-    "https://github.com/NUSH-Hack/hermes", false, ""
+    "https://github.com/NUSH-Hack/hermes", true, "https://youtu.be/i3SdEcL8hjM"
   ),
   new Project(
     "Grocer's Choice", "An app that helps you make a greener choice.",
@@ -35,7 +36,7 @@ const projects = [
   ),
   new Project(
     "Coeus", "A simple Research Development Toolkit designed in Python.",
-    "Junior Prize", 2018, "",
+    "Junior Prize", 2018, coeus,
     "https://github.com/NUSH-Hack/coeus", false, ""
   )
 ]
