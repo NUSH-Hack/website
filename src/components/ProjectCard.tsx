@@ -1,10 +1,9 @@
 import { 
     Card, CardBody, CardFooter, 
-    Text, Heading, Button, Image, Stack, Divider, ButtonGroup, LinkOverlay
+    Text, Heading, Button, Image, 
+    Stack, Divider, ButtonGroup, LinkOverlay
 } from '@chakra-ui/react';
-import {Project} from "../classes/Project"
-
-
+import {Project} from "../types/Project"
 
 export const ProjectCard = (project: Project) => (
     <Card>
@@ -13,8 +12,6 @@ export const ProjectCard = (project: Project) => (
         alt='Project Image'
         borderRadius='lg'
         />
-        {/* <CardHeader>
-        </CardHeader> */}
         <CardBody>
             <Stack mt='6' spacing='3'>
             <Heading size='md'>{project.title}</Heading>
